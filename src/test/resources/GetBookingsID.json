@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "bookingid": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "bookingid"
+    ]
+  }
+}
