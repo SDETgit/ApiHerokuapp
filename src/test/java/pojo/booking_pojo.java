@@ -45,5 +45,28 @@ public class booking_pojo {
 		this.additionalneeds = additionalneeds;
 	}
 	
+	public static class bookingDatesPojo {
+
+		private String checkin;
+
+		private String checkout;
+
+		// Getters and Setters
+		public String getCheckin() {
+			return checkin;
+		}
+
+		public String getCheckout() {
+			return checkout;
+		}
+
+		public void setCheckin(String string) {
+			this.checkin = string;
+		}
+
+		public void setCheckout(String checkout) {
+			this.checkout = checkout;
+		}
+	}
 	
 }

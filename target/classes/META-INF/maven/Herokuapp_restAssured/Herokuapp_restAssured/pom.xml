@@ -3,7 +3,9 @@
   <groupId>Herokuapp_restAssured</groupId>
   <artifactId>Herokuapp_restAssured</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <dependencies>
+	
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
     <groupId>io.rest-assured</groupId>
@@ -50,6 +52,12 @@
     <groupId>io.rest-assured</groupId>
     <artifactId>json-schema-validator</artifactId>
     <version>5.5.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.2</version>
 </dependency>
 
 </dependencies>

@@ -1,0 +1,264 @@
+Request method:	GET
+Request URI:	https://restful-booker.herokuapp.com/ping
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 201 Created
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067341&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Pjlh%2BUNNRQ5pfMQ7wxeSFS6pHMTfllegSUnyOV4cV2c%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067341&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Pjlh%2BUNNRQ5pfMQ7wxeSFS6pHMTfllegSUnyOV4cV2c%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: text/plain; charset=utf-8
+Content-Length: 7
+Etag: W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"
+Date: Thu, 20 Feb 2025 16:02:21 GMT
+Via: 1.1 vegur
+
+Created
+Request method:	POST
+Request URI:	https://restful-booker.herokuapp.com/auth
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path1=auth
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "admin",
+    "password": "password123"
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067343&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=3HypXW%2FcP%2Ffc3LnIYh3yGlacsf577ajAwslEhvjzaCs%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067343&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=3HypXW%2FcP%2Ffc3LnIYh3yGlacsf577ajAwslEhvjzaCs%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 27
+Etag: W/"1b-meSxvHkIR3//R/3xwoSnIK/9BLg"
+Date: Thu, 20 Feb 2025 16:02:23 GMT
+Via: 1.1 vegur
+
+{
+    "token": "91f779a429fdccf"
+}
+Request method:	POST
+Request URI:	https://restful-booker.herokuapp.com/booking
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path2=booking
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "firstname": "John",
+    "additionalneeds": "Breakfast",
+    "bookingdates": {
+        "checkin": "2025-03-01",
+        "checkout": "2025-03-05"
+    },
+    "totalprice": 250,
+    "depositpaid": true,
+    "lastname": "Doe"
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067347&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6PGxvco4h%2BFbvgi4f7t5x0BwlPK4uPUObKHaWHIRCtM%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067347&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6PGxvco4h%2BFbvgi4f7t5x0BwlPK4uPUObKHaWHIRCtM%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 195
+Etag: W/"c3-CHFmTBcId4FIdp7BW4kWQ4TL7GE"
+Date: Thu, 20 Feb 2025 16:02:27 GMT
+Via: 1.1 vegur
+
+{
+    "bookingid": 187,
+    "booking": {
+        "firstname": "John",
+        "lastname": "Doe",
+        "totalprice": 250,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2025-03-01",
+            "checkout": "2025-03-05"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}
+Request method:	GET
+Request URI:	https://restful-booker.herokuapp.com/booking/187
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path3=booking
+				path4=187
+Headers:		Accept=application/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067349&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=KMZjkUCGx4DMjYMdmQLivbLRVqlROIcpTuxeBzh3X9E%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067349&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=KMZjkUCGx4DMjYMdmQLivbLRVqlROIcpTuxeBzh3X9E%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 167
+Etag: W/"a7-9aWKstv/RQZL7aGjKza4bFRJsaM"
+Date: Thu, 20 Feb 2025 16:02:29 GMT
+Via: 1.1 vegur
+
+{
+    "firstname": "John",
+    "lastname": "Doe",
+    "totalprice": 250,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2025-03-01",
+        "checkout": "2025-03-05"
+    },
+    "additionalneeds": "Breakfast"
+}
+Request method:	PUT
+Request URI:	https://restful-booker.herokuapp.com/booking/187
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path3=booking
+				path4=187
+Headers:		Cookie=token=91f779a429fdccf
+				Accept=application/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "firstname": "Alice",
+    "additionalneeds": "Extra Bed",
+    "bookingdates": {
+        "checkin": "2025-03-10",
+        "checkout": "2025-03-15"
+    },
+    "totalprice": 400,
+    "depositpaid": false,
+    "lastname": "Smith"
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067351&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FC3scOckfQ7NISSP8lhx4L%2B7kok9jBD4AwrfjwbIfts%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067351&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FC3scOckfQ7NISSP8lhx4L%2B7kok9jBD4AwrfjwbIfts%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 171
+Etag: W/"ab-hdKS+lP+IsigU4QJnmXjXQK8VIc"
+Date: Thu, 20 Feb 2025 16:02:31 GMT
+Via: 1.1 vegur
+
+{
+    "firstname": "Alice",
+    "lastname": "Smith",
+    "totalprice": 400,
+    "depositpaid": false,
+    "bookingdates": {
+        "checkin": "2025-03-10",
+        "checkout": "2025-03-15"
+    },
+    "additionalneeds": "Extra Bed"
+}
+Request method:	PATCH
+Request URI:	https://restful-booker.herokuapp.com/booking/187
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path3=booking
+				path4=187
+Headers:		Cookie=token=91f779a429fdccf
+				Accept=application/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "firstname": "Emma",
+    "lastname": "Johnson"
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067352&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6SWnfLl0bknf5Ij8AzHkhwXYSSakkIFm9LhmzhQSEiY%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067352&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=6SWnfLl0bknf5Ij8AzHkhwXYSSakkIFm9LhmzhQSEiY%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 172
+Etag: W/"ac-OvW/ukHpAO5t10ga3FPYHrLJT/A"
+Date: Thu, 20 Feb 2025 16:02:32 GMT
+Via: 1.1 vegur
+
+{
+    "firstname": "Emma",
+    "lastname": "Johnson",
+    "totalprice": 400,
+    "depositpaid": false,
+    "bookingdates": {
+        "checkin": "2025-03-10",
+        "checkout": "2025-03-15"
+    },
+    "additionalneeds": "Extra Bed"
+}
+Request method:	DELETE
+Request URI:	https://restful-booker.herokuapp.com/booking/187
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	path3=booking
+				path4=187
+Headers:		Cookie=token=91f779a429fdccf
+				Accept=application/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 201 Created
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1740067354&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=trR736icJ7GoH%2FxO4b2iCPMbpKxzp%2B8uu6FUQFK1HzI%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1740067354&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=trR736icJ7GoH%2FxO4b2iCPMbpKxzp%2B8uu6FUQFK1HzI%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: text/plain; charset=utf-8
+Content-Length: 7
+Etag: W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"
+Date: Thu, 20 Feb 2025 16:02:34 GMT
+Via: 1.1 vegur
+
+Created
