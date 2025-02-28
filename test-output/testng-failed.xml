@@ -8,9 +8,9 @@
           <include name="creatBooking"/>
           <include name="patchUpdate"/>
           <include name="getBookingviaID"/>
-          <include name="updateBooking"/>
-          <include name="HealthCheck"/>
           <include name="auth_token"/>
+          <include name="HealthCheck"/>
+          <include name="updateBooking"/>
           <include name="delete"/>
         </methods>
       </class> <!-- test.Herokuapp_test -->

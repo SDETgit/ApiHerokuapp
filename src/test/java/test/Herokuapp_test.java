@@ -1,4 +1,5 @@
-package test;
+ 
+ package test;
 
 //TO validate json schema we use Json schema validator as external library 
 import static io.restassured.RestAssured.given;
@@ -14,6 +15,8 @@ import java.util.HashMap;
 
 import org.checkerframework.framework.qual.DefaultQualifier.List;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -51,21 +54,24 @@ import utils.methods;
 //</listeners>
 //2. Via adding listener tags as //@Listeners(test.ItestListners.class)
 //12. Running code via testng.xml
-
+//13. Extend reports 
+//14. Running code via Pom 
+//15. Running code via cmd 
 //Pending
-//11.Extend reports 
-//7. Running code via Pom 
-//8. Running code via cmd 
+
+
 //9. Jenkins integration 
 //10. TestNG anootations for dependency and severity 
 
 
 
-@Listeners(test.ItestListners.class)
+//@Listeners(test.ItestListners.class)
 public class Herokuapp_test {
 	public static String token1;
 	public static int  bookingID;
 	static methods me = new methods();
+	
+	@BeforeTest
 	
 	@Test (priority=1,description = "Test case to check health of the API ")
 	public static void HealthCheck() throws IOException {
@@ -104,7 +110,7 @@ public class Herokuapp_test {
 
 
 
-	@Test (priority =2,description = "Generate auth token " )
+	@Test (priority =2,dependsOnMethods = "HealthCheck",description = "Generate auth token " )
 	public static void auth_token() throws IOException {
 		String token= 
 		given().log().all().pathParam("path1","auth")
@@ -124,7 +130,7 @@ public class Herokuapp_test {
 		
 		
 }
-	@Test (priority = 3 , description = "Creating booking ")
+	@Test (priority = 3 ,dependsOnMethods = {"auth_token","HealthCheck"}, description = "Creating booking ")
 	public static void creatBooking() throws IOException {
 		
 		
@@ -152,7 +158,7 @@ public class Herokuapp_test {
 		
 		bookingID = 	js.get("bookingid");
 	}
-	@Test(priority = 4 , description = "Get booking via ID ")
+	@Test(priority = 4 , dependsOnMethods = {"creatBooking", "HealthCheck"},description = "Get booking via ID ")
 	
 	public static void getBookingviaID() throws IOException {
 		ArrayList al = me.readExcelData("data", "John");
@@ -176,7 +182,7 @@ public class Herokuapp_test {
 		.assertThat().spec(methods.ResponseSpecification()).extract().response().asString();;
 	}
 	
-	@Test (priority = 5, description = "Update the booking it required token also depenedcy on case 1 ")
+	@Test (priority = 5,dependsOnMethods = "creatBooking", description = "Update the booking it required token also depenedcy on case 1 ")
 	
 	public static void updateBooking() throws IOException {
 		ArrayList al = me.readExcelData("data", "Alice");
@@ -204,7 +210,7 @@ public class Herokuapp_test {
 				JsonPath js = new JsonPath(Response);
 	}
 	
-	@Test (priority =6, description = "Patch update partial update")
+	@Test (priority =6, dependsOnMethods = "creatBooking",description = "Patch update partial update")
 	
 	public static void patchUpdate() throws IOException {
 		ArrayList al = me.readExcelData("data", "Emma");
@@ -231,7 +237,7 @@ public class Herokuapp_test {
 				.assertThat().spec(methods.ResponseSpecification()).extract().response().asString();
 	}
 	
-	@Test (priority = 7 , description = "deleting the request ")
+	@Test (priority = 7 ,dependsOnMethods = "creatBooking", description = "deleting the request ")
 	
 	public static void delete () throws IOException {
 		String deleteText=
@@ -248,7 +254,7 @@ public class Herokuapp_test {
 	}
 	
 	
-	@Test (priority = 8 , description = "deleting the request ")
+	@Test (priority = 8 , description = "All bookings from the request  ")
 	public static void getbookings() throws FileNotFoundException 
 	{
 		given().log().all()

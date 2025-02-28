@@ -3,6 +3,7 @@ package utils;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.equalTo;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,8 +36,14 @@ public class methods {
 
 	public static RequestSpecification RequestSpecification() throws IOException {
 	if(req==null) {
+		
+		// Specify the directory where logs will be saved
+	    String logDir = "logs/"; 
+	    
+	    // Create the directory if it doesn't exist
+	   
 	        String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-	        String logFileName = "logging_" + timestamp + ".txt"; // Unique file per test run
+	        String logFileName = logDir+"logging_" + timestamp + ".txt"; // Unique file per test run
 	        PrintStream log = new PrintStream(new FileOutputStream(logFileName)); 
 	        req = new RequestSpecBuilder()
 	                .setBaseUri(global_Properties("base_url"))
@@ -104,7 +111,7 @@ public class methods {
 
 		for (int i = 0; i < rowNum; i++) {
 			XSSFRow row = sheet.getRow(i);
-
+			//String cell = wb.getSheet(Sheetname).getRow(0).getCell(0).getStringCellValue();
 			for (int j = 0; j < cellNum; j++) {
 
 				if (row.getCell(0).getStringCellValue().equalsIgnoreCase(tescaseName)) {
